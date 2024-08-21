@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.dbody {
+    display: flex;
+    height: 100vh;
+}
+
+.dcontainer {
+    display: flex;
+    width: 100%;
+}
+
+.dsidebar {
+    background-color: #b47654;
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidedashbtn, .sideactbtn {
+    background-color: #f3e3cc;
+    border: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    width: 80%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.dcontent {
+    background-color: #fefae4;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ensure content aligns properly */
+    height: 100%;
+}
+
+.dheader .dtitle {
+    background-color: #b47654;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.teamintro h2 {
+    font-size: 24px;
+    color: #b47654;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.teamintro h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.member {
+    text-align: center;
+}
+
+.member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.member p {
+    font-size: 16px;
+    color: gray;
+}

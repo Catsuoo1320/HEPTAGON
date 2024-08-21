@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFF6E4;
+    height: 100%;
+    overflow: hidden;
+}
+
+.acontainer {
+    display: flex;
+    height: 100vh; /* Fixing the typo from 100hv to 100vh */
+    width: 100%;
+}
+
+.asidebar {
+    width: 20%;
+    background-color: #B37F63;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidedashbutton, .sideactbutton {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #FFF6E4;
+    border: none;
+    border-radius: 10px;
+    color: #B37F63;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.main {
+    width: 80%;
+    padding: 20px;
+    background-color: #FFF6E4;
+    overflow: auto;
+}
+
+.hepheader {
+    text-align: center;
+    background-color: #B37F63;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.asection h1 {
+    text-align: center;
+    color: #B37F63;
+    margin-bottom: 30px;
+}
+
+.agrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 50px;
+}
+
+.abutton {
+    background-color: #B37F63;
+    color: #FFF6E4;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.abutton small {
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.abutton:hover {
+    background-color: #a3674e;
+}
