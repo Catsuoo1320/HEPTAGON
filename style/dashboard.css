@@ -99,3 +99,25 @@
     color: gray;
 }
 
+@media (min-width: 768px) {
+    .dcontainer {
+        flex-direction: row;
+    }
+
+    .dsidebar {
+        width: 20%;
+        margin-bottom: 0;
+    }
+
+    .dcontent {
+        width: 80%;
+    }
+
+    .team {
+        gap: 40px;
+    }
+
+    .member {
+        max-width: 200px;
+    }
+}
