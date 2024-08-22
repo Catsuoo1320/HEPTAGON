@@ -8,6 +8,7 @@
 .dbody {
     display: flex;
     height: 100vh;
+    overflow: hidden; /* Prevent scrolling when sidebar is active */
 }
 
 .dcontainer {
@@ -24,6 +25,9 @@
     align-items: center;
     justify-content: flex-start;
     transition: transform 0.3s ease;
+    position: fixed; /* Make sure the sidebar is fixed */
+    top: 0;
+    left: -100%; /* Hide off-screen initially */
 }
 
 .sidedashbtn, .sideactbtn {
@@ -118,24 +122,19 @@
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
     .dsidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 60%;
-        height: 100%;
-        transform: translateX(-100%);
+        width: 60%; /* Adjust the width of the sidebar */
     }
 
     .dsidebar.active {
-        transform: translateX(0);
+        transform: translateX(0); /* Show the sidebar */
     }
 
     .dcontent {
         width: 100%;
-        margin-left: 0;
+        margin-left: 0; /* Adjust content margin when sidebar is active */
     }
 
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger icon */
     }
 }
