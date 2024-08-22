@@ -28,8 +28,11 @@
     left: 0;
     transition: width 0.5s; /* Add a transition effect */
     z-index: 1; /* Make sure the sidebar is on top of the content */
+    overflow: hidden;
 }
-
+.dsidebar:not(.active) {
+    opacity: 0;
+}
 .dsidebar.active {
     width: 100%; /* Make the sidebar full-width on mobile */
 }
