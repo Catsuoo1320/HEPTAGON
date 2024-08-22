@@ -8,7 +8,6 @@
 .dbody {
     display: flex;
     height: 100vh;
-    padding-left: 20%; /* Add padding to the left */
 }
 
 .dcontainer {
@@ -24,48 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: fixed; /* Add this to make the sidebar fixed */
-    top: 0;
-    left: 0;
-    transition: width 0.5s; /* Add a transition effect */
-    z-index: 1; /* Make sure the sidebar is on top of the content */
-    overflow: hidden;
-}
-
-.dsidebar:not(.active) {
-    opacity: 0;
-    width: 0; /* Add this to hide the sidebar's width */
-    padding: 0; /* Add this to hide the sidebar's padding */
-    overflow: hidden; /* Add this to hide the sidebar's content */
-}
-
-.dsidebar.active {
-    width: 100%; /* Make the sidebar full-width on mobile */
-    opacity: 1;
-}
-
-.dsidebar button.hamburger {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #f3e3cc;
-    border: none;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    visibility: visible; /* Add this to make the hamburger button visible */
-    z-index: 2;
-}
-
-.dsidebar:not(.active) button.hamburger {
-    visibility: visible; /* Make the hamburger button visible even when sidebar is not active */
-}
-.dsidebar button.hamburger::before {
-    content: "\2630"; /* Unicode character for hamburger icon */
-}
-
-.dsidebar button.hamburger.active::before {
-    content: "\2715"; /* Unicode character for close icon */
 }
 
 .sidedashbtn, .sideactbtn {
@@ -140,23 +97,4 @@
 .member p {
     font-size: 16px;
     color: gray;
-}
-
-/* Add media query to make the sidebar responsive */
-@media (max-width: 768px) {
-    .dsidebar {
-        width: 0; /* Hide the sidebar by default on mobile */
-    }
-    .dsidebar.active {
-        width: 100%; /* Show the sidebar when the hamburger button is clicked */
-    }
-    .dcontainer {
-        flex-direction: column; /* Make the container a column on mobile */
-    }
-    .dcontent {
-        width: 100%; /* Make the content full-width on mobile */
-    }
-    .dsidebar.active + .dcontent {
-        margin-left: 0; /* Remove margin when sidebar is active on mobile */
-    }
 }
