@@ -8,7 +8,7 @@
 </head>
 <body class="dbody">
     <div class="dcontainer">
-        <aside class="dsidebar">
+        <aside class="dsidebar" id="sidebar">
             <button class="sidedashbtn" onclick="window.location.href='index.html'">Dashboard</button>
             <button class="sideactbtn" onclick="window.location.href='Activities.html'">Activities</button>
         </aside>
@@ -16,6 +16,9 @@
         <main class="dcontent">
             <header class="dheader">
                 <h1 class="dtitle">HEPTAGON</h1>
+                <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
+                    &#9776;
+                </div>
             </header>
             <section class="teamintro">
                 <h2>Get to know</h2>
@@ -60,5 +63,12 @@
             </section>
         </main>
     </div>   
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active')
+        }
+    </script>
 </body>
 </html>

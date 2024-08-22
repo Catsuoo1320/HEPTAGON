@@ -8,7 +8,7 @@ body {
 
 .acontainer {
     display: flex;
-    height: 100vh; /* Fixing the typo from 100hv to 100vh */
+    height: 100vh; 
     width: 100%;
 }
 
@@ -83,3 +83,4 @@ body {
 .abutton:hover {
     background-color: #a3674e;
 }
+
