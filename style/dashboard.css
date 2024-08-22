@@ -17,17 +17,14 @@
 }
 
 .dsidebar {
-    background-color: #b47654;
-    width: 20%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    transition: transform 0.3s ease;
-    position: fixed; /* Make sure the sidebar is fixed */
+    position: fixed;
     top: 0;
-    left: -100%; /* Hide off-screen initially */
+    left: -100%; /* Initially off-screen */
+    width: 60%; /* Adjusted for mobile */
+    height: 100%;
+    background-color: #b47654;
+    padding: 20px;
+    transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
 }
 
 .sidedashbtn, .sideactbtn {
