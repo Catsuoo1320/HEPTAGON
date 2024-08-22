@@ -19,12 +19,17 @@
 .dsidebar {
     position: fixed;
     top: 0;
-    left: 60%; /* Initially off-screen */
-    width: 60%; /* Adjusted for mobile */
+    left: -100%; /* Initially off-screen */
+    width: 60%;
     height: 100%;
     background-color: #b47654;
     padding: 20px;
     transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
+}
+
+.dsidebar.active {
+    transform: translateX(0); /* Show the sidebar */
+    left: 0; /* Reset left position when active */
 }
 
 .sidedashbtn, .sideactbtn {
@@ -119,7 +124,7 @@
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
     .dsidebar {
-        width: 60%; /* Adjust the width of the sidebar */
+        width: 60%;
     }
 
     .dsidebar.active {
