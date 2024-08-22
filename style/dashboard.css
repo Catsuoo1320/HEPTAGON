@@ -37,7 +37,6 @@
     width: 0; /* Add this to hide the sidebar's width */
     padding: 0; /* Add this to hide the sidebar's padding */
     overflow: hidden; /* Add this to hide the sidebar's content */
-    visibility: hidden; /* Add this to fully hide the sidebar */
 }
 
 .dsidebar.active {
