@@ -23,7 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: transform 0.3s ease;
 }
 
 .sidedashbtn, .sideactbtn {
@@ -45,22 +44,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Ensure content aligns properly */
     height: 100%;
-    transition: margin-left 0.3s ease;
-}
-
-.dheader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
 }
 
 .dheader .dtitle {
@@ -68,9 +53,8 @@
     color: white;
     padding: 10px 30px;
     border-radius: 20px;
+    margin-bottom: 30px;
     font-size: 36px;
-    flex-grow: 1;
-    text-align: center;
 }
 
 .teamintro h2 {
@@ -113,29 +97,4 @@
 .member p {
     font-size: 16px;
     color: gray;
-}
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    .dsidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 60%;
-        height: 100%;
-        transform: translateX(-100%);
-    }
-
-    .dsidebar.active {
-        transform: translateX(0);
-    }
-
-    .dcontent {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
 }
