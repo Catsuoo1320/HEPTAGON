@@ -37,7 +37,7 @@
     width: 0; /* Add this to hide the sidebar's width */
     padding: 0; /* Add this to hide the sidebar's padding */
     overflow: hidden; /* Add this to hide the sidebar's content */
-    visibility: visible; /* Add this to fully hide the sidebar */
+    visibility: hidden; /* Add this to fully hide the sidebar */
 }
 
 .dsidebar.active {
@@ -58,6 +58,9 @@
     z-index: 2;
 }
 
+.dsidebar:not(.active) button.hamburger {
+    visibility: visible; /* Make the hamburger button visible even when sidebar is not active */
+}
 .dsidebar button.hamburger::before {
     content: "\2630"; /* Unicode character for hamburger icon */
 }
