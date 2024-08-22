@@ -35,6 +35,7 @@
 }
 .dsidebar.active {
     width: 100%; /* Make the sidebar full-width on mobile */
+    opacity: 1;
 }
 
 .dsidebar button.hamburger {
