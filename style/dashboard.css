@@ -19,7 +19,7 @@
 .dsidebar {
     position: fixed;
     top: 0;
-    left: -100%; /* Initially off-screen */
+    left: 60%; /* Initially off-screen */
     width: 60%; /* Adjusted for mobile */
     height: 100%;
     background-color: #b47654;
