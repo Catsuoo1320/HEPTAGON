@@ -8,7 +8,6 @@
 .dbody {
     display: flex;
     height: 100vh;
-    overflow: hidden; /* Prevent scrolling when sidebar is active */
 }
 
 .dcontainer {
@@ -17,19 +16,14 @@
 }
 
 .dsidebar {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Initially off-screen */
-    width: 60%;
-    height: 100%;
     background-color: #b47654;
+    width: 20%;
     padding: 20px;
-    transition: transform 0.3s ease, left 0.3s ease; /* Smooth transition */
-}
-
-.dsidebar.active {
-    transform: translateX(0); /* Show the sidebar */
-    left: 0; /* Reset left position when active */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
 }
 
 .sidedashbtn, .sideactbtn {
@@ -124,19 +118,24 @@
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
     .dsidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
         width: 60%;
+        height: 100%;
+        transform: translateX(-100%);
     }
 
     .dsidebar.active {
-        transform: translateX(0); /* Show the sidebar */
+        transform: translateX(0);
     }
 
     .dcontent {
         width: 100%;
-        margin-left: 0; /* Adjust content margin when sidebar is active */
+        margin-left: 0;
     }
 
     .hamburger {
-        display: block; /* Show hamburger icon */
+        display: block;
     }
 }
