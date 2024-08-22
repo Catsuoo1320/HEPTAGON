@@ -8,6 +8,7 @@
 .dbody {
     display: flex;
     height: 100vh;
+    padding-left: 20%; /* Add padding to the left */
 }
 
 .dcontainer {
@@ -30,9 +31,11 @@
     z-index: 1; /* Make sure the sidebar is on top of the content */
     overflow: hidden;
 }
+
 .dsidebar:not(.active) {
     opacity: 0;
 }
+
 .dsidebar.active {
     width: 100%; /* Make the sidebar full-width on mobile */
     opacity: 1;
@@ -144,5 +147,8 @@
     }
     .dcontent {
         width: 100%; /* Make the content full-width on mobile */
+    }
+    .dsidebar.active + .dcontent {
+        margin-left: 0; /* Remove margin when sidebar is active on mobile */
     }
 }
