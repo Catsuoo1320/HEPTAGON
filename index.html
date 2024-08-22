@@ -9,8 +9,9 @@
 <body class="dbody">
     <div class="dcontainer">
         <aside class="dsidebar">
-            <button class="sidedashbtn" onclick="window.location.href='index.html'">Dashboard</button>
-            <button class="sideactbtn" onclick="window.location.href='Activities.html'">Activities</button>
+            <button class="hamburger" onclick="toggleSidebar()"></button>
+            <div class="sidedashbtn" onclick="window.location.href='index.html'">Dashboard</div>
+            <div class="sideactbtn" onclick="window.location.href='Activities.html'">Activities</div>
         </aside>
 
         <main class="dcontent">
@@ -59,6 +60,12 @@
                 </div>
             </section>
         </main>
-    </div>   
+    </div>
+
+    <script>
+         function toggleSidebar() {
+            document.querySelector('.dsidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

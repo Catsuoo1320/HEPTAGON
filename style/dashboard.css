@@ -23,6 +23,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: fixed; /* Add this to make the sidebar fixed */
+    top: 0;
+    left: 0;
+    transition: width 0.5s; /* Add a transition effect */
+    z-index: 1; /* Make sure the sidebar is on top of the content */
+}
+
+.dsidebar.active {
+    width: 100%; /* Make the sidebar full-width on mobile */
+}
+
+.dsidebar button.hamburger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f3e3cc;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dsidebar button.hamburger::before {
+    content: "\2630"; /* Unicode character for hamburger icon */
+}
+
+.dsidebar button.hamburger.active::before {
+    content: "\2715"; /* Unicode character for close icon */
 }
 
 .sidedashbtn, .sideactbtn {
@@ -99,43 +127,18 @@
     color: gray;
 }
 
-/* Media queries for mobile screens */
-@media only screen and (max-width: 768px) {
+/* Add media query to make the sidebar responsive */
+@media (max-width: 768px) {
     .dsidebar {
-        width: 100%;
-        padding: 10px;
+        width: 0; /* Hide the sidebar by default on mobile */
+    }
+    .dsidebar.active {
+        width: 100%; /* Show the sidebar when the hamburger button is clicked */
+    }
+    .dcontainer {
+        flex-direction: column; /* Make the container a column on mobile */
     }
     .dcontent {
-        width: 100%;
-        padding: 10px;
-    }
-    .team {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .member {
-        margin-bottom: 20px;
-    }
-    .member img {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .dheader .dtitle {
-        font-size: 24px;
-    }
-    .teamintro h2 {
-        font-size: 18px;
-    }
-    .teamintro h1 {
-        font-size: 28px;
-    }
-    .member h3 {
-        font-size: 14px;
-    }
-    .member p {
-        font-size: 12px;
+        width: 100%; /* Make the content full-width on mobile */
     }
 }
