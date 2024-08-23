@@ -1,3 +1,4 @@
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@
 .dbody {
     display: flex;
     height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .dcontainer {
@@ -16,13 +18,41 @@
 }
 
 .dsidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Make sidebar visible on PC */
+    width: 250px;
+    height: 100vh;
     background-color: #b47654;
-    width: 20%;
     padding: 20px;
+    transition: left 0.3s ease; /* Animate with left property for mobile */
+    z-index: 2; /* Ensure it's above the content */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: center; /* Center contents horizontally */
+    justify-content: center; /* Center contents vertically */
+}
+
+.dsidebar.active {
+    left: 0; /* Move sidebar into view */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
 }
 
 .sidedashbtn, .sideactbtn {
@@ -39,13 +69,15 @@
 
 .dcontent {
     background-color: #fefae4;
-    width: 80%;
+    width: calc(100% - 250px); /* Adjust width to accommodate the sidebar */
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Ensure content aligns properly */
+    justify-content: flex-start;
     height: 100%;
+    margin-left: 250px; /* Add margin to account for sidebar on PC */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .dheader .dtitle {
@@ -97,4 +129,43 @@
 .member p {
     font-size: 16px;
     color: gray;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3; /* Ensure it's above the sidebar */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .dsidebar {
+        left: -250px; /* Hide sidebar off-screen */
+    }
+
+    .dsidebar.active {
+        left: 0; /* Slide sidebar in from the left */
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .dcontent {
+        width: 100%; /* Full width on mobile screens */
+        margin-left: 0; /* Remove margin to accommodate sidebar on mobile */
+        height: 100vh; /* Ensure content takes full viewport height */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
 }

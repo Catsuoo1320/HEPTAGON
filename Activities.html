@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="acontainer">
+        <button class="hamburger-menu" onclick="toggleSidebar()">&#9776;</button>
+        <div class="overlay" onclick="closeSidebar()"></div>
+
         <aside class="asidebar">
             <button class="sidedashbutton" onclick="window.location.href='index.html'">Dashboard</button>
             <button class="sideactbutton" onclick="window.location.href='Activities.html'">Activities</button>
@@ -36,6 +39,27 @@
         </main>
     </div>
 
+    <script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.asidebar');
+        const overlay = document.querySelector('.overlay');
+        
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    function closeSidebar() {
+        const sidebar = document.querySelector('.asidebar');
+        const overlay = document.querySelector('.overlay');
+        
+        if (sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    }
+
+    document.querySelector('.overlay').addEventListener('click', closeSidebar);
+    </script>
 
 </body>
 </html>

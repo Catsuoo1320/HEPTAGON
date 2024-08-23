@@ -1,3 +1,4 @@
+/* Default (PC) styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,53 +6,19 @@ body {
     height: 100%;
     overflow: hidden;
 }
-
-.acontainer {
-    display: flex;
-    height: 100vh; 
-    width: 100%;
-}
-
-.asidebar {
-    width: 20%;
-    background-color: #B37F63;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.sidedashbutton, .sideactbutton {
-    width: 80%;
-    padding: 15px;
-    margin-bottom: 20px;
-    background-color: #FFF6E4;
-    border: none;
-    border-radius: 10px;
-    color: #B37F63;
-    font-size: 18px;
-    cursor: pointer;
-}
-
 .main {
-    width: 80%;
+    width: 85%; /* Adjusted width to take up remaining space */
     padding: 20px;
     background-color: #FFF6E4;
     overflow: auto;
+    margin-left: 15%; /* Adjusted to account for sidebar */
+    box-sizing: border-box;
 }
-
-.hepheader {
-    text-align: center;
-    background-color: #B37F63;
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-}
-
-.asection h1 {
-    text-align: center;
-    color: #B37F63;
-    margin-bottom: 30px;
+.acontainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative; /* Ensure proper positioning for overlay */
 }
 
 .agrid {
@@ -61,26 +28,188 @@ body {
     padding: 0 50px;
 }
 
-.abutton {
-    background-color: #B37F63;
-    color: #FFF6E4;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 1.5;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
+.abutton {
+        background-color: #B37F63;
+        color: #FFF6E4;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+
+.abutton:hover {
+    background-color: #a3674e;
+}
 .abutton small {
     display: block;
     font-size: 12px;
     margin-top: 10px;
 }
 
-.abutton:hover {
-    background-color: #a3674e;
+.asection h1 {
+    text-align: center;
+    color: #B37F63;
+    margin-bottom: 30px;
 }
 
+
+/* Sidebar Styles */
+.asidebar {
+    width: 15%; /* Sidebar width for PC */
+    background-color: #B37F63;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    padding: 20px;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0; /* Ensure sidebar is visible on PC */
+    height: 100vh;
+    z-index: 3; /* Ensure it's above the header and other content */
+    transition: left 0.3s ease-in-out; /* Simple slide effect */
+}
+
+/* Button Styles for PC */
+.sidedashbutton, .sideactbutton {
+    width: 80%; /* Adjust width relative to sidebar */
+    padding: 15px; /* Design padding */
+    margin-bottom: 20px; /* Design margin */
+    background-color: #FFF6E4;
+    border: none;
+    border-radius: 10px;
+    color: #B37F63;
+    font-size: 18px; /* Design font size */
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for button design */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+
+/* Sidebar Hidden (Mobile) */
+.asidebar.hidden {
+    background-color: transparent; /* Transparent background */
+}
+
+/* Overlay Styles */
+.overlay {
+    display: none; /* Hide overlay by default */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 2; /* Ensure it's below the sidebar */
+}
+
+/* Show overlay when sidebar is active */
+.asidebar.active + .overlay {
+    display: block;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .asidebar {
+        width: 250px; /* Sidebar width for mobile */
+        left: -250px; /* Hide sidebar off-screen initially */
+        justify-content: center; /* Center content vertically */
+    }
+
+    .asidebar.active {
+        left: 0; /* Slide sidebar in from the left when active */
+    }
+
+    .overlay.active {
+        display: block; /* Show overlay when sidebar is active */
+    }
+
+    .main {
+        width: 100%; /* Full width on mobile screens */
+        margin-left: 0; /* Remove margin to accommodate sidebar on mobile */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on small screens */
+        font-size: 30px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: fixed; /* Fixed position to stay in place */
+        top: 20px;
+        left: 20px;
+        z-index: 4; /* Ensure it's above the sidebar and other content */
+    }
+
+    /* Vertical Scrollable Layout for Activity Buttons */
+    .agrid {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: calc(100vh - 100px); /* Adjust height to fit within the viewport */
+        padding: 20px;
+        gap: 10px; /* Reduced gap for mobile */
+    }
+
+    .abutton {
+        padding: 12px; /* Adjust button padding for mobile */
+        font-size: 14px; /* Adjust font size for mobile */
+        background-color: #B37F63; /* Ensure background color for design consistency */
+        color: #FFF6E4; /* Ensure text color for design consistency */
+        border-radius: 10px; /* Consistent border radius */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .abutton small {
+        font-size: 12px; /* Adjust small text size for mobile */
+        margin-top: 5px; /* Adjust margin for small text */
+    }
+
+    .abutton:hover {
+        background-color: #a3674e; /* Ensure hover color for design consistency */
+    }
+}
+
+/* Header Styles */
+.hepheader {
+    text-align: center;
+    background-color: #B37F63;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    z-index: 1; /* Ensure it's below the sidebar */
+}
+
+/* Main Content Styles */
+.main {
+    width: 85%; /* Adjusted width to take up remaining space */
+    padding: 20px;
+    background-color: #FFF6E4;
+    overflow: auto;
+    margin-left: 15%; /* Adjusted to account for sidebar */
+    box-sizing: border-box;
+}
+
+.asection h1 {
+    text-align: center;
+    color: #B37F63;
+    margin-bottom: 30px;
+}
+
+/* Button Styles for Activity Buttons */
+.activity-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust space between buttons */
+    max-height: calc(100vh - 100px); /* Adjust height to fit within the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
